@@ -1,6 +1,6 @@
 
 
-CREATE TABLE clientes 
+CREATE TABLE Clientes 
 (
     id SERIAL PRIMARY KEY,
     nombre VARCHAR(100),
@@ -11,7 +11,7 @@ CREATE TABLE clientes
 
 
 
-CREATE TABLE productos
+CREATE TABLE Productos
 (
     id SERIAL PRIMARY KEY,
     codigo VARCHAR(80),
@@ -20,7 +20,7 @@ CREATE TABLE productos
     valor_unitario DECIMAL(10,2)
 );
 
-CREATE TABLE pedidos
+CREATE TABLE Pedidos
 (
     id SERIAL PRIMARY KEY,
     fecha VARCHAR(80),
