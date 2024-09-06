@@ -42,6 +42,7 @@ select * from pedidos;
 select * from facturas;
 
 
+
 insert into facturas (fecha,cantidad,valor_total,pedido_estado,id_cliente,producto_id)
 values("8/26/2024",1,35000,"Entregado",3,2),
 	  ("8/26/2024",5,1000000,"Pendiente",19,19),
@@ -69,6 +70,8 @@ BEGIN
     END IF;
 END;
 $$;
+
+
 
 
 	 
