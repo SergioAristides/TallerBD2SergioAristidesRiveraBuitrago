@@ -85,9 +85,6 @@ $$;
 
 	
 
-select * from clientes;
-
-select * from facturas;
 
 CREATE OR REPLACE PROCEDURE simular_ventas_mes()
 AS $$
