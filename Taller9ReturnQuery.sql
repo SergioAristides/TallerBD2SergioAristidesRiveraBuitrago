@@ -172,3 +172,60 @@ select * from crear_empleado('laura torres', '9988776655', 3);
 
 
 
+
+CREATE OR REPLACE FUNCTION obtener_nomina_empleado(empleado_id INT)
+RETURNS TEXT AS $$
+BEGIN
+    RETURN 
+    'SELECT e.nombre, n.mes, n.año, n.fecha_pago, n.total_devengado, n.total_deducciones, n.total
+    FROM empleados e
+    JOIN nomina n ON e.identificacion = n.cliente_id
+    WHERE e.identificacion = ' || empleado_id || ';';
+END;
+$$ LANGUAGE plpgsql;
+
+
+
+CREATE OR REPLACE FUNCTION obtener_total_por_contrato()
+RETURNS TEXT AS $$
+BEGIN
+    RETURN 
+    'SELECT tc.descripcion, SUM(n.total) AS total_nomina
+    FROM tipo_contrato tc
+    JOIN empleados e ON e.tipo_contrato_id = tc.id
+    JOIN nomina n ON e.identificacion = n.cliente_id
+    GROUP BY tc.descripcion;';
+END;
+$$ LANGUAGE plpgsql;
+
+
+
+CREATE OR REPLACE FUNCTION query.obtener_nomina_empleado(empleado_identificacion character varying)
+ RETURNS TABLE(nombre character varying, mes integer, "año" integer, fecha_pago date, total_devengado numeric, total_deducciones numeric, total numeric)
+ LANGUAGE plpgsql
+AS $function$
+BEGIN
+    RETURN QUERY 
+    SELECT e.nombre, n.mes, n.ano, n.fecha_pago, n.total_devengado, n.total_deducciones, n.total
+    FROM query.empleados e
+    JOIN query.nomina n ON e.identificacion = empleado_identificacion;
+END;
+$function$
+;
+
+-- DROP FUNCTION query.obtener_total_por_contrato();
+
+CREATE OR REPLACE FUNCTION query.obtener_total_por_contrato()
+ RETURNS TABLE(descripcion character varying, total_nomina numeric)
+ LANGUAGE plpgsql
+AS $function$
+BEGIN
+    RETURN QUERY 
+    SELECT tc.descripcion, SUM(n.total) AS total_nomina
+    FROM query.tipo_contrato tc
+    JOIN query.empleados e ON e.tipo_contrato_id = tc.id
+    JOIN query.nomina n ON e.id = n.cliente_id 
+    GROUP BY tc.descripcion;
+END;
+$function$
+;
