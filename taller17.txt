@@ -1,0 +1,126 @@
+
+//Insercion de 20 registros en la coleccion
+[
+  { "ISBN": "1011-A", "Titulo": "El monje que vendió su Ferrari", "NombreAutor": "Robin Sharma", "Genero": "Desarrollo Personal", "Año": 1997 },
+  { "ISBN": "1011-B", "Titulo": "Caballo de Troya", "NombreAutor": "J.J. Benítez", "Genero": "Ficción Histórica", "Año": 1984 },
+  { "ISBN": "1011-C", "Titulo": "Sin miedo", "NombreAutor": "Jorge Ramos", "Genero": "Política", "Año": 2016 },
+  { "ISBN": "1011-D", "Titulo": "Las enseñanzas de Don Juan", "NombreAutor": "Carlos Castaneda", "Genero": "Esoterismo", "Año": 1968 },
+  { "ISBN": "1011-E", "Titulo": "La Fuerza de la Vocación", "NombreAutor": "Jorge Ramos", "Genero": "Sociedad", "Año": 2018 },
+  { "ISBN": "1011-F", "Titulo": "La vida secreta de los perros", "NombreAutor": "Robin Sharma", "Genero": "Novela", "Año": 2007 },
+  { "ISBN": "1011-G", "Titulo": "Viaje a Ixtlán", "NombreAutor": "Carlos Castaneda", "Genero": "Aventura", "Año": 1972 },
+  { "ISBN": "1011-H", "Titulo": "El Arcángel", "NombreAutor": "J.J. Benítez", "Genero": "Misterio", "Año": 2000 },
+  { "ISBN": "1011-I", "Titulo": "El líder que no tenía cargo", "NombreAutor": "Robin Sharma", "Genero": "Negocios", "Año": 2010 },
+  { "ISBN": "1011-J", "Titulo": "Una Realidad Aparte", "NombreAutor": "Carlos Castaneda", "Genero": "Filosofía", "Año": 1971 },
+  { "ISBN": "1011-K", "Titulo": "El Papa", "NombreAutor": "Jorge Ramos", "Genero": "Religión", "Año": 2016 },
+  { "ISBN": "1011-L", "Titulo": "Mis Enigmas Favoritos", "NombreAutor": "J.J. Benítez", "Genero": "Investigación", "Año": 1999 },
+  { "ISBN": "1011-M", "Titulo": "La Dama Azul", "NombreAutor": "J.J. Benítez", "Genero": "Ficción", "Año": 1992 },
+  { "ISBN": "1011-N", "Titulo": "Planeta Encantado", "NombreAutor": "J.J. Benítez", "Genero": "Documental", "Año": 2001 },
+  { "ISBN": "1011-O", "Titulo": "El Caminante", "NombreAutor": "Robin Sharma", "Genero": "Superación", "Año": 2014 },
+  { "ISBN": "1011-P", "Titulo": "Relatos de Poder", "NombreAutor": "Carlos Castaneda", "Genero": "Aventura", "Año": 1974 },
+  { "ISBN": "1011-Q", "Titulo": "El Arte de la Guerra", "NombreAutor": "Robin Sharma", "Genero": "Liderazgo", "Año": 2005 },
+  { "ISBN": "1011-R", "Titulo": "Atrévete a Soñar", "NombreAutor": "Jorge Ramos", "Genero": "Autoayuda", "Año": 2011 },
+  { "ISBN": "1011-S", "Titulo": "Poder sin Límites", "NombreAutor": "Robin Sharma", "Genero": "Negocios", "Año": 2008 },
+  { "ISBN": "1011-T", "Titulo": "El Don del Águila", "NombreAutor": "Carlos Castaneda", "Genero": "Esoterismo", "Año": 1981 }
+]
+
+
+// Actualizacion de 10 registros
+query: {ISBN: "1011-A"} 
+$set: {
+  "Titulo": "El Monje que Vendió su Ferrari (Edición Actualizada)",
+  "NombreAutor": "Robin Sharma",
+  "Genero": "Autoayuda",
+  "Año": 1999
+}
+
+query: {ISBN: "1011-B"} 
+$set: {
+  "Titulo": "Caballo de Troya (Edición Especial)",
+  "NombreAutor": "J.J. Benítez",
+  "Genero": "Ficción Religiosa",
+  "Año": 1985
+}
+
+query: {ISBN: "1011-C"} 
+$set: {
+  "Titulo": "Sin Miedo: Reflexiones Actuales",
+  "NombreAutor": "Jorge Ramos",
+  "Genero": "Política y Sociedad",
+  "Año": 2017
+}
+
+query: {ISBN: "1011-D"} 
+$set: {
+  "Titulo": "Las Enseñanzas de Don Juan (Nueva Edición)",
+  "NombreAutor": "Carlos Castaneda",
+  "Genero": "Filosofía y Misticismo",
+  "Año": 1971
+}
+
+query: {ISBN: "1011-E"} 
+$set: {
+  "Titulo": "La Fuerza de la Vocación (Edición Revisada)",
+  "NombreAutor": "Jorge Ramos",
+  "Genero": "Ensayo",
+  "Año": 2019
+}
+
+query: {ISBN: "1011-F"} 
+$set: {
+  "Titulo": "La Vida Secreta de los Perros (Ampliada)",
+  "NombreAutor": "Robin Sharma",
+  "Genero": "Ficción",
+  "Año": 2008
+}
+
+query: {ISBN: "1011-H"} 
+$set: {
+  "Titulo": "El Arcángel (Edición Aniversario)",
+  "NombreAutor": "J.J. Benítez",
+  "Genero": "Misterio y Ciencia Ficción",
+  "Año": 2002
+}
+
+query: {ISBN: "1011-I"} 
+$set: {
+  "Titulo": "El Líder sin Cargo (Versión Ampliada)",
+  "NombreAutor": "Robin Sharma",
+  "Genero": "Desarrollo Personal",
+  "Año": 2011
+}
+
+query: {ISBN: "1011-J"} 
+$set: {
+  "Titulo": "Viaje a Ixtlán (Nueva Versión)",
+  "NombreAutor": "Carlos Castaneda",
+  "Genero": "Filosofía",
+  "Año": 1974
+}
+
+query: {ISBN: "1011-K"} 
+$set: {
+  "Titulo": "Mis Enigmas Favoritos (Actualizado)",
+  "NombreAutor": "J.J. Benítez",
+  "Genero": "Investigación y Misterio",
+  "Año": 2001
+} 
+
+// Consultas con los operadores
+# Igual a
+{ "año": 2020 }
+# Mayor que
+{ "año": { "$gt": 2015 } }
+# Menor que
+{ "año": { "$lt": 2000 } }
+# Mayor o igual que
+{ "año": { "$gte": 1990 } }
+# Menor o igual que
+{ "año": { "$lte": 1980 } }
+# No igual
+{ "NombreAutor": { "$ne": "Robin Sharma" } }
+# In
+{ "Genero": { "$in": ["Misterio", "Ficción Histórica"] } }
+# And
+{ "$and": [ { "año": { "$gt": 1980 } }, { "Genero": "Autoayuda" } ] }
+# Or
+{ "$or": [ { "año": { "$lt": 1980 } },
