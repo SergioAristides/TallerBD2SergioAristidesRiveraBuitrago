@@ -194,3 +194,9 @@ select * from empleado;
 update empleado set salario = 6000000 where identificacion =108765436;
 
 select * from auditoria_empleado ;
+
+
+
+
+--before se ejecuta antes de la accion del trigger
+--after se ejecuta despues de la accion del trigger
