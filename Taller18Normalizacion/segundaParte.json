@@ -1,0 +1,146 @@
+[
+    {
+        "productoId": "p1",
+        "nombre": "Camiseta Deportiva",
+        "descripcion": "Camiseta de polieter fresca, ideal para hacer deporte",
+        "precio": 19.99,
+        "categoria": { "categoriaId": "c1", "nombreCategoria": "Ropa" },
+        "comentarios": [
+            { "autor": "Juan", "contenido": "Muy cooda y ligera" },
+            { "autor": "Ana", "contenido": "Buen material y diseño" }
+        ]
+    },
+    {
+        "productoId": "p2",
+        "nombre": "Auriculares Inalalambricos",
+        "descripcion": "Auriculares con cancelación de ruido",
+        "precio": 59.99,
+        "categoria": { "categoriaId": "c2", "nombreCategoria": "Electronica" },
+        "comentarios": [
+            { "autor": "Carlos", "contenido": "Excelente calidad de sonido" }
+        ]
+    },
+    {
+        "productoId": "p3",
+        "nombre": "Botella de Agua",
+        "descripcion": "Botella de acero inoxidable",
+        "precio": 14.99,
+        "categoria": { "categoriaId": "c3", "nombreCategoria": "Accesorios" },
+        "comentarios": [
+            { "autor": "Laura", "contenido": "Mantiene el agua fria por horas" }
+        ]
+    },
+    {
+        "productoId": "p4",
+        "nombre": "Laptop ASUSVivo Book",
+        "descripcion": "Laptop ligera y potente para trabajo y estudios",
+        "precio": 899.99,
+        "categoria": { "categoriaId": "c2", "nombreCategoria": "Electronica" },
+        "comentarios": [
+            { "autor": "Luis", "contenido": "Ideal para trabajo en movimiento" },
+            { "autor": "María", "contenido": "La bateria dura mas de 12 horas" }
+        ]
+    },
+    {
+        "productoId": "p5",
+        "nombre": "Zapatos Deportivos",
+        "descripcion": "Zapatos comodos para correr",
+        "precio": 49.99,
+        "categoria": { "categoriaId": "c1", "nombreCategoria": "Ropa" },
+        "comentarios": [
+            { "autor": "Pedro", "contenido": "Muy comodos y ligeros" },
+            { "autor": "Sara", "contenido": "Buen agarre y amortiguación" }
+        ]
+    },
+    {
+        "productoId": "p6",
+        "nombre": "Mochila de Viaje",
+        "descripcion": "Mochila espaciosa con compartimento para laptop",
+        "precio": 34.99,
+        "categoria": { "categoriaId": "c3", "nombreCategoria": "Accesorios" },
+        "comentarios": [
+            { "autor": "Clara", "contenido": "Muy resistente y práctica" }
+        ]
+    },
+    {
+        "productoId": "p7",
+        "nombre": "Reloj Inteligente",
+        "descripcion": "Reloj con monitoreo de salud y notificaciones",
+        "precio": 79.99,
+        "categoria": { "categoriaId": "c2", "nombreCategoria": "Electronica" },
+        "comentarios": [
+            { "autor": "Andrés", "contenido": "Muy útil y práctico" }
+        ]
+    },
+    {
+        "productoId": "p8",
+        "nombre": "Silla Ergonomica",
+        "descripcion": "Silla de oficina con soporte lumbar",
+        "precio": 129.99,
+        "categoria": { "categoriaId": "c4", "nombreCategoria": "Muebles" },
+        "comentarios": [
+            { "autor": "Marta", "contenido": "Perfecta para largas horas de trabajo" }
+        ]
+    },
+    {
+        "productoId": "p9",
+        "nombre": "Lámpara de Escritorio LED",
+        "descripcion": "Lámpara con ajuste de brillo y temperatura de color",
+        "precio": 24.99,
+        "categoria": { "categoriaId": "c4", "nombreCategoria": "Muebles" },
+        "comentarios": [
+            { "autor": "Diego", "contenido": "Ilumina muy bien y es ajustable" }
+        ]
+    },
+    {
+        "productoId": "p10",
+        "nombre": "Teclado Mecanico",
+        "descripcion": "Teclado mecánico retroiluminado para gaming",
+        "precio": 49.99,
+        "categoria": { "categoriaId": "c2", "nombreCategoria": "Electronica" },
+        "comentarios": [
+            { "autor": "Ricardo", "contenido": "Muy buena respuesta y calidad" }
+        ]
+    }
+]
+
+
+/**
+tambien se creo un pipeline y despues se probo 
+creando un tag de $proyect para cada consulta
+**/
+
+/**
+stage: $project para mostrar solo los campos deseados sin categorías ni comentarios
+**/
+
+    
+{
+    "productoId": 1,
+    "nombre": 1,
+    "descripcion": 1,
+    "precio": 1
+}
+
+/**
+stage $project para mostrar productos junto con las categorías
+**/
+{
+    "productoId": 1,
+    "nombre": 1,
+    "descripcion": 1,
+    "precio": 1,
+    "categoria": 1
+}
+
+/**
+stage $project para mostrar productos junto con los comentarios
+**/
+
+{
+    "productoId": 1,
+    "nombre": 1,
+    "descripcion": 1,
+    "precio": 1,
+    "comentarios": 1
+}

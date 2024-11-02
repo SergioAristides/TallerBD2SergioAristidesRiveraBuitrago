@@ -1,0 +1,89 @@
+/**
+inserciones
+**/
+[
+    { "autorId": "a1", "nombre": "Gabriel Garcia Márquez", "nacionalidad": "Colombiano" },
+    { "autorId": "a2", "nombre": "Carlos Castañeda", "nacionalidad": "Salavadoreño" },
+    { "autorId": "a3", "nombre": "Robin Sharma", "nacionalidad": "Canadiense" },
+    { "autorId": "a4", "nombre": "Yosip Ibrahim", "nacionalidad": "Peruano" },
+    { "autorId": "a5", "nombre": "Carlos Fuentes", "nacionalidad": "Mexicano" }
+]
+
+[
+    { "generoId": "g1", "nombreGenero": "Realismo Mágico" },
+    { "generoId": "g2", "nombreGenero": "Espiritualidad" },
+    { "generoId": "g3", "nombreGenero": "Autoayuda" },
+    { "generoId": "g4", "nombreGenero": "Ficcion" },
+    { "generoId": "g5", "nombreGenero": "Ensayo" }
+]
+
+[
+    { "ISBN": "978-345", "titulo": "Cien años de soledad", "autorId": "a1", "generoId": "g1" },
+    { "ISBN": "978-456", "titulo": "La enseñanzas de don Juan", "autorId": "a2", "generoId": "g2" },
+    { "ISBN": "978-234", "titulo": "El lider que no tenia cargo", "autorId": "a3", "generoId": "g3" },
+    { "ISBN": "978-123", "titulo": "Yo visite ganímides", "autorId": "a4", "generoId": "g4" },
+    { "ISBN": "978-174", "titulo": "Aura", "autorId": "a5", "generoId": "g4" }
+]
+
+/**
+consultas
+**/
+
+/**
+obtener libro por isbn en docuemnts
+**/
+{ "ISBN": "978-345" }
+
+
+/**
+lo siguiente se realiza creando un nuevo pipeline y creando stag 
+con la accion deseada
+**/
+/**
+stage 1 $lookup
+**/
+
+{
+    "from": "autores",
+    "localField": "autorId",
+    "foreignField": "autorId",
+    "as": "autor"
+}
+/**
+stage 2 $unwind
+**/
+{
+    "path": "$autor",
+    "preserveNullAndEmptyArrays": true
+}
+/**
+stage 3 $lookup
+**/
+{
+    "from": "generos",
+    "localField": "generoId",
+    "foreignField": "generoId",
+    "as": "genero"
+}
+/**
+stage 4 $unwind
+**/
+{
+    "path": "$genero",
+    "preserveNullAndEmptyArrays": true
+}
+
+/**
+al final se puede observar que obtenemos los loslibros con sus autores y generos
+**/
+
+/**
+podemos crear otro stage 5 para que me muestre solo lo que quiero
+**/
+{
+    "ISBN": 1,
+    "titulo": 1,
+    "autor.nombre": 1,
+    "autor.nacionalidad": 1,
+    "genero.nombreGenero": 1
+}
